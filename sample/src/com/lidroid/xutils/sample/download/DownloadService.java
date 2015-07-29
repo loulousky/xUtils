@@ -22,6 +22,7 @@ public class DownloadService extends Service {
     public static DownloadManager getDownloadManager(Context appContext) {
         if (!DownloadService.isServiceRunning(appContext)) {
             Intent downloadSvr = new Intent("download.service.action");
+            downloadSvr.setPackage(getPackageName());//这里你需要设置你应用的包名
             appContext.startService(downloadSvr);
         }
         if (DownloadService.DOWNLOAD_MANAGER == null) {
