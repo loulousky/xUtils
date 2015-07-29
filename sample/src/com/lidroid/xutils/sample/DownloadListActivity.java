@@ -117,7 +117,7 @@ public class DownloadListActivity extends Activity {
                 RequestCallBack callBack = handler.getRequestCallBack();
                 if (callBack instanceof DownloadManager.ManagerCallBack) {
                     DownloadManager.ManagerCallBack managerCallBack = (DownloadManager.ManagerCallBack) callBack;
-                    if (managerCallBack.getBaseCallBack() == null) {
+                    if (managerCallBack.getBaseCallBack() == null｜｜!(managerCallBack.getBaseCallBack() instanceof DownloadRequestCallBack)) {
                         managerCallBack.setBaseCallBack(new DownloadRequestCallBack());
                     }
                 }
